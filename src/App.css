@@ -1,38 +1,63 @@
 .App {
   text-align: center;
+  background-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  max-width: 150px;
+  border-radius: 25%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.article-topic {
+  font-size: 5px;
+  font-style: italic;
+  color: darkblue;
+  align-content: end;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.article-topic:hover {
+  color: rgb(163, 0, 0);
+}
+.article-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  border: black;
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.article-title:hover {
+  text-decoration: underline;
+  color: blueviolet;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.article-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: auto;
+}
+
+.article-card {
+  border: rgb(223, 60, 223);
+  border: solid;
+  background-color: rgb(144, 210, 246);
+  margin: 0px;
+}
+
+.article-author {
+  font-size: 5px;
+  font-style: italic;
+  text-align: inherit;
+  color: darkblue;
+}
+
+.article-date {
+  font-size: 5px;
+  font-style: italic;
+  color: darkblue;
+  text-align: justify;
+}
+
+li {
+  list-style: none;
 }
