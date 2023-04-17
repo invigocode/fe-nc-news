@@ -1,7 +1,10 @@
 function ArticleList({ articles }) {
   return (
-    <div>
+    <div className="everything">
       <h2 className="Header">Scroll Stories</h2>
+      <button className="category-buttons">football stories</button>
+      <button className="category-buttons">cooking stories</button>
+      <button className="category-buttons">coding stories</button>
       <ul className="article-grid">
         {articles.map((article) => {
           const formattedDate = new Date(article.created_at).toLocaleString(

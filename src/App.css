@@ -8,6 +8,26 @@ img {
   border-radius: 25%;
 }
 
+.Header:hover {
+  color: #92d764;
+}
+
+.category-buttons {
+  color: #000000;
+  border-radius: 5px;
+  border-color: #000000;
+  align-content: space-around;
+  margin-left: 10px;
+}
+
+.category-buttons:hover {
+  background-color: #1c7bff;
+  color: #ffffff;
+  border-radius: 5px;
+  border-color: #000000;
+  align-content: space-around;
+}
+
 .article-topic {
   font-size: 5px;
   font-style: italic;
@@ -34,7 +54,7 @@ img {
 .article-grid {
   display: grid;
   grid-template-columns: auto auto auto;
-  margin-left: auto;
+  margin-right: 5%;
 }
 
 .article-card {
