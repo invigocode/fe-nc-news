@@ -1,7 +1,15 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  const [articles, setArticles] = useState([]);
+  return (
+    <div className="App">
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
