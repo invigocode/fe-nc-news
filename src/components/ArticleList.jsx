@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ArticleList({ articles }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,9 +17,9 @@ function ArticleList({ articles }) {
           );
           return (
             <li className="article-card">
-              <a href="" className="article-title">
+              <Link to={`/articles/${article.article_id}`}>
                 {article.title}
-              </a>
+              </Link>
               <img src={article.article_img_url} />
               <a href="" className="article-topic">
                 {article.topic}

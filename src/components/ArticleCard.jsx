@@ -17,6 +17,9 @@ const ArticleCard = () => {
     });
   }, [article_id]);
 
+  if (IsLoading) {
+    return <h1 className="loading-screen">Loading...</h1>;
+  }
   return (
     <div className="article-card">
       <h2 className="card-title">{article.title}</h2>
