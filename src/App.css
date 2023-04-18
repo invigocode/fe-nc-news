@@ -1,39 +1,88 @@
 .App {
   text-align: center;
   color: #0459d9;
+  background-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loading-screen {
+  color: rgb(100, 100, 100);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  max-width: 150px;
+  border-radius: 25%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header:hover {
+  color: #92d764;
 }
 
-.App-link {
-  color: #61dafb;
+.category-buttons {
+  color: #000000;
+  border-radius: 5px;
+  border-color: #000000;
+  align-content: space-around;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category-buttons:hover {
+  background-color: #1c7bff;
+  color: #ffffff;
+  border-radius: 5px;
+  border-color: #000000;
+  align-content: space-around;
+}
+
+.article-topic {
+  font-size: 5px;
+  font-style: italic;
+  color: darkblue;
+  align-content: end;
+}
+
+.article-topic:hover {
+  color: rgb(163, 0, 0);
+}
+.article-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  border: black;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.article-title:hover {
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-right: 5%;
+}
+
+.article-card {
+  border: rgb(223, 60, 223);
+  border: solid;
+  background-color: rgb(144, 210, 246);
+  margin: 0px;
+}
+
+.article-author {
+  font-size: 5px;
+  font-style: italic;
+  text-align: inherit;
+  color: darkblue;
+}
+
+.article-date {
+  font-size: 5px;
+  font-style: italic;
+  color: darkblue;
+  text-align: justify;
+}
+
+li {
+  list-style: none;
 }

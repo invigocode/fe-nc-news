@@ -1,12 +1,29 @@
-import { useState } from "react";
 import "./App.css";
+import { getArticles } from "./data";
+import ArticleList from "./components/ArticleList";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [articles, setArticles] = useState([]);
+  const [IsLoading, setIsloading] = useState(false);
+
+  useEffect(() => {
+    setIsloading(true);
+    getArticles().then((articlesApi) => {
+      setArticles(articlesApi);
+      setIsloading(false);
+    });
+  }, []);
+
+  if (IsLoading) {
+    return <h1 className="loading-screen">Loading...</h1>;
+  }
+
   return (
     <div className="App">
       <Routes>
-        <Route></Route>
+        <Route path="/" element={<ArticleList articles={articles} />} />
       </Routes>
     </div>
   );
