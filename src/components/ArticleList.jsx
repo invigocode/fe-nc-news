@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function ArticleList({ articles }) {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="everything">
       <h2 className="Header">Scroll Stories</h2>
