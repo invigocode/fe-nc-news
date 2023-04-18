@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleCard } from "../data";
+import Comments from "./Comments";
 
 const ArticleCard = () => {
   const { article_id } = useParams();
@@ -33,6 +34,7 @@ const ArticleCard = () => {
           <p className="article-body">{article.body}</p>
         </li>
       </ul>
+      <Comments article_id={article_id} />
     </div>
   );
 };

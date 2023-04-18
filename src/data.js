@@ -15,3 +15,9 @@ export const getArticleCard = (article_id) => {
     return data.article;
   });
 };
+
+export const getComments = (article_id) => {
+  return news.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};
