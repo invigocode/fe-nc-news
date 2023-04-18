@@ -18,7 +18,7 @@ const Comments = ({ article_id }) => {
       {comments.map((comment) => {
         return (
           <li>
-            <p className="comment-author">author: {comment.author}</p>
+            <p className="comment-author">useranme: {comment.author}</p>
             <p className="comment-body">comments: {comment.body}</p>
             <p className="comment-votes">votes: {comment.votes}</p>
           </li>
