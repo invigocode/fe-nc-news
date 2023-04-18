@@ -1,12 +1,13 @@
 import "./App.css";
 import { getArticles } from "./data";
 import ArticleList from "./components/ArticleList";
+import ArticleCard from "./components/ArticleCard";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [IsLoading, setIsloading] = useState(false);
+  const [IsLoading, setIsloading] = useState(true);
 
   useEffect(() => {
     setIsloading(true);
@@ -24,6 +25,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<ArticleList articles={articles} />} />
+        <Route path="/articles" element={<ArticleList articles={articles} />} />
+        <Route
+          path="/articles/:article_id"
+          element={<ArticleCard articles={articles} />}
+        />
       </Routes>
     </div>
   );

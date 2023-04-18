@@ -62,25 +62,41 @@ img {
   margin-right: 5%;
 }
 
-.article-card {
-  border: rgb(223, 60, 223);
-  border: solid;
-  background-color: rgb(144, 210, 246);
-  margin: 0px;
-}
-
 .article-author {
-  font-size: 5px;
+  font-size: x-small;
   font-style: italic;
   text-align: inherit;
   color: darkblue;
 }
 
 .article-date {
-  font-size: 5px;
+  font-size: x-small;
   font-style: italic;
   color: darkblue;
   text-align: justify;
+}
+
+.article-card {
+  justify-content: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: smaller;
+}
+
+.card-author {
+  font-size: xx-small;
+}
+
+.card-topic {
+  font-size: xx-small;
+}
+
+.article-body {
+  font-size: xx-small;
+  text-align: justify;
+  justify-content: space-around;
 }
 
 li {
