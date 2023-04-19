@@ -3,8 +3,8 @@
 .App {
   font-family: "Manrope", sans-serif;
   text-align: center;
-  color: #0459d9;
-  background-color: #ffffff;
+  color: #000000;
+  background-color: #ffefef;
 }
 
 .loading-screen {
@@ -97,9 +97,19 @@ img {
 }
 
 .article-body {
-  font-size: xx-small;
-  text-align: justify;
-  justify-content: space-around;
+  display: inline-flexbox;
+  font-size: x-small;
+  text-align: center;
+}
+
+.comment-box {
+  display: grid;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.comment-body {
+  font-size: 9px;
 }
 
 li {
