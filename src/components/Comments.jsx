@@ -17,7 +17,7 @@ const Comments = ({ article_id }) => {
     return <h1 className="loading-screen">comments loading...</h1>;
   }
 
-  if (!comments) {
+  if (comments.length === 0) {
     return <h2>no comments to show</h2>;
   }
   return (
