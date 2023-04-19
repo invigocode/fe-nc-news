@@ -22,9 +22,17 @@ export const getComments = (article_id) => {
   });
 };
 
-export const patchVotes = (article_id, incOrDec) => {
+export const patchVotes = (article_id) => {
   return news
-    .patch(`/articles/${article_id}/comments`, { inc_votes: incOrDec })
+    .patch(`/articles/${article_id}`, { inc_votes: 1 })
+    .then(({ data }) => {
+      return data.comments;
+    });
+};
+
+export const patchVotesDown = (article_id) => {
+  return news
+    .patch(`/articles/${article_id}`, { inc_votes: -1 })
     .then(({ data }) => {
       return data.comments;
     });

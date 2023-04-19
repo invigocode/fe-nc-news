@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleCard } from "../data";
+import { getArticleCard, patchVotes, patchVotesDown } from "../data";
 import Comments from "./Comments";
 
 const ArticleCard = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [votes, setVotes] = useState(0);
+  const [hasVoted, setHasVoted] = useState(false);
   const [comments, setComments] = useState([]);
   const [IsLoading, setIsloading] = useState(true);
 
@@ -17,6 +18,32 @@ const ArticleCard = () => {
       setIsloading(false);
     });
   }, [article_id]);
+
+  useEffect(() => {
+    setVotes(article.votes);
+  }, [article.votes]);
+
+  const handleVote = () => {
+    if (!hasVoted) {
+      setHasVoted(true);
+      setVotes((currVotes) => currVotes + 1);
+      patchVotes(article_id).catch((err) => {
+        if (err) {
+          setHasVoted(false);
+          setVotes((currVotes) => currVotes - 1);
+        }
+      });
+    } else {
+      setHasVoted(false);
+      setVotes((currVotes) => currVotes - 1);
+      patchVotesDown(article_id).catch((err) => {
+        if (err) {
+          setHasVoted(true);
+          setVotes((currVotes) => currVotes + 1);
+        }
+      });
+    }
+  };
 
   if (IsLoading) {
     return <h1 className="loading-screen">Loading...</h1>;
@@ -29,6 +56,16 @@ const ArticleCard = () => {
           <div className="author-parent">
             <h3 className="card-author"> written by {article.author}</h3>
             <h4 className="card-topic"> category {article.topic}</h4>
+            <h4 className="card-votes"> likes {votes}</h4>
+            <button
+              type="button"
+              className="like-button"
+              onClick={() => {
+                handleVote();
+              }}
+            >
+              +
+            </button>
           </div>
           <img src={article.article_img_url} />
           <p className="article-body">{article.body}</p>
