@@ -11,7 +11,7 @@ const Comments = ({ article_id }) => {
       setComments(commentsAPI);
       setIsLoading(false);
     });
-  }, []);
+  }, [article_id]);
 
   if (IsLoading) {
     return <h1 className="loading-screen">comments loading...</h1>;
