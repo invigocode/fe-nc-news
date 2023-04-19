@@ -12,6 +12,14 @@ const Comments = ({ article_id }) => {
       setIsLoading(false);
     });
   }, []);
+
+  if (IsLoading) {
+    return <h1 className="loading-screen">comments loading...</h1>;
+  }
+
+  if (!comments) {
+    return <h2>no comments to show</h2>;
+  }
   return (
     <div>
       <h3>comments</h3>
