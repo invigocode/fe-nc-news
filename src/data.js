@@ -21,3 +21,11 @@ export const getComments = (article_id) => {
     return data.comments;
   });
 };
+
+export const patchVotes = (article_id, inc_vote) => {
+  return news
+    .patch(`/articles/${article_id}`, { inc_votes: inc_vote })
+    .then(({ data }) => {
+      return data.comments;
+    });
+};

@@ -5,6 +5,10 @@ const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   useEffect(() => {
     setIsLoading(true);
     getComments(article_id).then((commentsAPI) => {
@@ -20,9 +24,16 @@ const Comments = ({ article_id }) => {
   if (comments.length === 0) {
     return <h2>no comments to show</h2>;
   }
+
   return (
     <div>
       <h3>comments</h3>
+      <form className="comment-form" onSubmit={handleSubmit}>
+        <div htmlFor="comment">
+          <input placeholder="add comment..."></input>
+          <button type="submit">comment</button>
+        </div>
+      </form>
       {comments.map((comment) => {
         return (
           <li className="comment-box">
