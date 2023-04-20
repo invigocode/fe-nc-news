@@ -24,22 +24,23 @@ const ArticleCard = () => {
   }, [article.votes]);
 
   const handleVote = () => {
+    let inc_vote = 1;
     if (!hasVoted) {
       setHasVoted(true);
-      setVotes((currVotes) => currVotes + 1);
-      patchVotes(article_id).catch((err) => {
+      setVotes((currVotes) => currVotes + inc_vote);
+      patchVotes(article_id, inc_vote).catch((err) => {
         if (err) {
           setHasVoted(false);
-          setVotes((currVotes) => currVotes - 1);
+          setVotes((currVotes) => currVotes - inc_vote);
         }
       });
     } else {
       setHasVoted(false);
-      setVotes((currVotes) => currVotes - 1);
-      patchVotesDown(article_id).catch((err) => {
+      setVotes((currVotes) => currVotes - inc_vote);
+      patchVotes(article_id, inc_vote).catch((err) => {
         if (err) {
           setHasVoted(true);
-          setVotes((currVotes) => currVotes + 1);
+          setVotes((currVotes) => currVotes + inc_vote);
         }
       });
     }
